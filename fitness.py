@@ -4,6 +4,10 @@
 #Muuttujat
 pituus = 163 # Pituus senttimetreinä (cm)
 paino = 57.1 # Paino kilogrammoina (kg)
+pituus_teksti = input('Kuinka pitkä olet? (cm): ')
+paino_teksti = input('Kuinka paljon painat? (kg): ')
+pituus = float(pituus_teksti) # Muutetaan liukuluvuksi
+paino = float(paino_teksti)
 
 '''
 pituus_metreina = pituus / 100
@@ -17,7 +21,11 @@ print('Painoindeksisi on ', bmi)
 # Määritellään funktio painoindeksi laskentaan
 def laske_bmi(paino, pituus):
     pituus = pituus / 100 # Muutetaan pituus metreiksi
-    bmi = paino / pituus**2
-    print('Painoindeksisi on ', bmi)
+    bmi = paino / pituus**2 # BMI:n matemaattinen laskukaava, rivit 23 ja 24
+    bmi = round(bmi, 2) # Pyöristetään bmi kahteen desimaaliin, vaihtoehto 1
+    # print('Painoindeksisi on ', bmi)
+    return bmi # Palauta bmi-laskukaavan määritelmä allaolevaan koodiin
 
-laske_bmi(57.1, 163)
+bmi = laske_bmi(paino, pituus)
+# x = round(bmi,2) # Pyöristetään bmi kahteen desimaaliin, vaihtoehto 2
+print('Painoindeksisi on:', bmi)
