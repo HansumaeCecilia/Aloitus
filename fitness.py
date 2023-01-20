@@ -43,26 +43,36 @@ def aikuisen_rasvaprosentti(bmi, ika, sukupuoli):
     Args:
         bmi (float): painoindeksi
         ika (float): henkilön ikä
-        sukupuoli (float): sukupuoli
+        sukupuoli (float): sukupuoli (0 = nainen, 1 = mies)
 
     Returns:
-        float: aikuisen rasvaprosentti
+        float: kehon rasvaprosentti (aikuinen)
     """
-    rasvaprosentti = 1.20 * bmi + 0.23 * ika - 10.8 * sukupuoli -5.4
+    rasvaprosentti = 1.20 * bmi + 0.23 * ika - 10.8 * sukupuoli -5.4 # Aikuisen kehon rasvaprosentin laskentakaava
     rasvaprosentti = round(rasvaprosentti)
     return rasvaprosentti    
+
+def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
+    """Laskee lapsen rasvaprosentin
+
+    Args:
+        bmi (float): painoindeksi
+        ika (float): ikä
+        sukupuoli (float): sukupuoli (tyttö = 0, poika = 1)
+
+    Returns:
+        float: kehon rasvaprosentti (lapsi)
+    """
+
+    rasvaprosentti = 1.51 * bmi + 0.7 * ika - 3.6 * sukupuoli +1.4 # Lapsen kehon rasvaprosentin laskentakaava
+    rasvaprosentti = round(rasvaprosentti)
+    return rasvaprosentti
 
 oma_bmi = laske_bmi(paino, pituus)
 oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
 
-def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
 
-    rasvaprosentti = 1.20 * bmi + 0.23 * ika - 10.8 * sukupuoli -5.4
-    rasvaprosentti = round(rasvaprosentti)
-    return rasvaprosentti
-
-
-if ika < 18:
+if ika < 18: # Jos ikä on alle 18, ohjelma laskee lapsen rasvaprosentin
     print(lapsen_rasvaprosentti)
 else:
     print(aikuisen_rasvaprosentti)
