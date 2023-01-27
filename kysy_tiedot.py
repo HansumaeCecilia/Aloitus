@@ -4,16 +4,18 @@
 # KIRJASTOT JA MODUULIT
 #----------------------
 
-# Tuodaan fitness.py_n sisältämät toiminnot ohjelmaan
+# Tuodaan fitness.py:n sisältämät toiminnot ohjelmaan
 import fitness
 
-while True:
+# Kysytään tiedot ja tulostetaan painoindeksi kunnes halutaan lopettaa
+while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
         
     pituus_teksti = input('Pituus (cm), tyhjä lopettaa: ')
     
+    # Tutkitaan onko syötetty pituudeksi tyhjä (pelkkä enter)
     if pituus_teksti == '':
-        break
-
+        break #Poistutaan silmukasta, jos vastaus tyhjä
+    
     paino_teksti = input('Paino (kg): ')
 
     pituus = float(pituus_teksti)
