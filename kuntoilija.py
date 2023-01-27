@@ -24,3 +24,4 @@ if __name__ == "__main__":
 
     # Luodaan olio luokasta Kuntoilija
     kuntoilija = Kuntoilija('Kalle Kuntoilija', 171, 65, 40, 1)
+    print(kuntoilija.nimi, 'painaa', kuntoilija.paino, 'kg')
