@@ -19,7 +19,7 @@ def laske_bmi(paino, pituus):
 
     pituus = pituus / 100 # Muutetaan pituus metreiksi
     bmi = paino / pituus**2 # BMI:n matemaattinen laskukaava, rivit 23 ja 24
-    bmi = round(bmi, 2) # Pyöristetään bmi kahteen desimaaliin, vaihtoehto 1
+    bmi = round(bmi, 1) # Pyöristetään bmi kahteen desimaaliin, vaihtoehto 1
     return bmi # Palauta bmi-laskukaavan määritelmä allaolevaan koodiin
 
 #bmi = laske_bmi(paino, pituus)
@@ -71,16 +71,16 @@ if __name__ == "__main__":
     ika = float(ika_teksti)
     sukupuoli = float(sukupuoli_teksti)
 
-# Lasketaan painoindeksi funktiolla laske_bmi
-oma_bmi = laske_bmi(paino, pituus)
+    # Lasketaan painoindeksi funktiolla laske_bmi
+    oma_bmi = laske_bmi(paino, pituus)
 
-# Yli 18-vuotiailla käytetään aikuisen kaavaa
-if ika >= 18:
-    oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
+    # Yli 18-vuotiailla käytetään aikuisen kaavaa
+    if ika >= 18:
+        oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
 
-# Muussa tapauksessa käytetään lapsen kaavaa
-else:
-    oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
+    # Muussa tapauksessa käytetään lapsen kaavaa
+    else:
+        oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
 
-print('Oma painoindeksisi on', oma_bmi,
-     'ja kehon rasvaprosentti on', oma_rasvaprosentti)
+    print('Oma painoindeksisi on', oma_bmi,
+        'ja kehon rasvaprosentti on', oma_rasvaprosentti)
