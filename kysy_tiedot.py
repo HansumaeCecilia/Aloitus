@@ -10,13 +10,13 @@ import fitness
 # Kysytään tiedot ja tulostetaan painoindeksi kunnes halutaan lopettaa
 bmi_lista = []
 while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
-        
-    pituus_teksti = input('Pituus (cm), tyhjä lopettaa: ')
     
-    # Tutkitaan onko syötetty pituudeksi tyhjä (pelkkä enter)
-    if pituus_teksti == '':
+    nimi = input('Nimi, tyhjä lopettaa: ')
+    
+    if nimi == '':
         break #Poistutaan silmukasta, jos vastaus tyhjä
     
+    pituus_teksti = input('Pituus (cm): ')    
     paino_teksti = input('Paino (kg): ')
 
     # Yritetään muuttaa syötetyt tekstit luvuiksi ja laskea BMI
@@ -27,8 +27,11 @@ while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
         # Lasketaan painoindeksi fitness-modulin laske_bmi-funktiolla
         bmi = fitness.laske_bmi(paino, pituus)
 
+        # Luodaan monikko (tuple), jos nimi ja bmi
+        monikko = (nimi, bmi)
+
         # Lisätään BMI listaan
-        bmi_lista.append(bmi)
+        bmi_lista.append(monikko)
 
         # Näytetään tulokset ruudulla
         print('Painoindeksi on:', bmi)
@@ -38,4 +41,4 @@ while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
         print('Syötteessä oli virhe, yritä uudelleen', e)
 
 # Tulosta ruudulle lopuksi lista painoindekseistä
-print('Painoindeksit olivat:', bmi_lista)
+print('Nimet ja painoindeksit olivat:', bmi_lista)
