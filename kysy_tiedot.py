@@ -18,10 +18,17 @@ while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
     
     paino_teksti = input('Paino (kg): ')
 
-    pituus = float(pituus_teksti)
-    paino = float(paino_teksti)
+    # Yritetään muuttaa syötetyt tekstit luvuiksi ja laskea BMI
+    try:
+        pituus = float(pituus_teksti)
+        paino = float(paino_teksti)
 
-    # Lasketaan painoindeksi fitness-modulin laske_bmi-funktiolla
-    bmi = fitness.laske_bmi(paino, pituus)
+        # Lasketaan painoindeksi fitness-modulin laske_bmi-funktiolla
+        bmi = fitness.laske_bmi(paino, pituus)
 
-    print('Painoindeksi on:', bmi)
+        # Näytetään tulokset ruudulla
+        print('Painoindeksi on:', bmi)
+
+    # Jos tapahtuu virhe, ilmoitetaa käyttäjälle
+    except Exception as e:
+        print('Syötteessä oli virhe, yritä uudelleen', e)
