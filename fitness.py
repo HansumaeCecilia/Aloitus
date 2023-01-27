@@ -75,10 +75,31 @@ if ika >= 18:
 else:
     oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
 
+print('Oma painoindeksisi on', oma_bmi, 'ja kehon rasvaprosentti on', oma_rasvaprosentti)
 
-# if ika < 18: # Jos ikä on alle 18, ohjelma laskee lapsen rasvaprosentin
-#     print(lapsen_rasvaprosentti)
-# else:
-#     print(aikuisen_rasvaprosentti)
+if __name__ == "__main__":
+
+    # Kysytään käyttäjältä tiedot
+    pituus_teksti = input('Kuinka pitkä olet? (cm): ') # Input lukee käyttäjän vastaukset
+    paino_teksti = input('Kuinka paljon painat? (kg): ')
+    ika_teksti = input('Minkä ikäinen olet? ')
+    sukupuoli_teksti = input('Sukupuoli mies, vastaa 1, N -nainen: vastaa 0: ')
+
+    # Muutetaan vastaukset liukuluvuiksi
+    pituus = float(pituus_teksti)
+    paino = float(paino_teksti)
+    ika = float(ika_teksti)
+    sukupuoli = float(sukupuoli_teksti)
+
+# Lasketaan painoindeksi funktiolla laske_bmi
+oma_bmi = laske_bmi(paino, pituus)
+
+# Yli 18-vuotiailla käytetään aikuisen kaavaa
+if ika >= 18:
+    oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
+
+# Muussa tapauksessa käytetään lapsen kaavaa
+else:
+    oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
 
 print('Oma painoindeksisi on', oma_bmi, 'ja kehon rasvaprosentti on', oma_rasvaprosentti)
