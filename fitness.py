@@ -68,15 +68,6 @@ def lapsen_rasvaprosentti(bmi, ika, sukupuoli):
     rasvaprosentti = round(rasvaprosentti, 2)
     return rasvaprosentti
 
-oma_bmi = laske_bmi(paino, pituus)
-
-if ika >= 18:
-    oma_rasvaprosentti = aikuisen_rasvaprosentti(oma_bmi, ika, sukupuoli)
-else:
-    oma_rasvaprosentti = aikuisen_rasvaprosentti(ika, oma_bmi, sukupuoli)
-
-print('Oma painoindeksisi on', oma_bmi, 'ja kehon rasvaprosentti on', oma_rasvaprosentti)
-
 if __name__ == "__main__":
 
     # Kysytään käyttäjältä tiedot
