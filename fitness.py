@@ -6,14 +6,14 @@
 
 pituus_teksti = input('Kuinka pitkä olet? (cm): ') # Input lukee käyttäjän vastaukset
 paino_teksti = input('Kuinka paljon painat? (kg): ')
-ika_teksti = input('Minkä ikäinen olet? ')
-sukupuoli_teksti = input('Sukupuoli mies, vastaa 1, N -nainen: vastaa 0: ')
+# ika_teksti = input('Minkä ikäinen olet? ')
+# sukupuoli_teksti = input('Sukupuoli mies, vastaa 1, N -nainen: vastaa 0: ')
 
 # Muutetaan vastaukset liukuluvuiksi
 pituus = float(pituus_teksti)
 paino = float(paino_teksti)
-ika = float(ika_teksti)
-sukupuoli = float(sukupuoli_teksti)
+# ika = float(ika_teksti)
+# sukupuoli = float(sukupuoli_teksti)
 
 # Määritellään funktio painoindeksi laskentaan
 def laske_bmi(paino, pituus):
