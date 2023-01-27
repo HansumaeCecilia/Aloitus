@@ -9,13 +9,16 @@ import fitness
 
 # Kysytään tiedot ja tulostetaan painoindeksi kunnes halutaan lopettaa
 bmi_lista = []
+nimilista = []
+
 while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
     
     nimi = input('Nimi, tyhjä lopettaa: ')
-    
+        
     if nimi == '':
         break #Poistutaan silmukasta, jos vastaus tyhjä
     
+    nimilista.append(nimi)    
     pituus_teksti = input('Pituus (cm): ')    
     paino_teksti = input('Paino (kg): ')
 
@@ -45,4 +48,12 @@ print('Nimet ja painoindeksit olivat:', bmi_lista)
 
 # Puretaan lista ja tulostetaan se rivi riviltä
 for henkilo in bmi_lista:
-    print(henkilo)
+    
+    # Monikossa on kaksi tietoa, joiden indeksit ovat 0 (ensimmäinen) ja 1 (toinen)
+    print(henkilo[0],'painoindeksi on', henkilo[1])
+
+# Listassa olevien monikoiden määrä
+print('Listassa oli', len(bmi_lista), 'merkintää')
+
+nimilista.sort()
+print(nimilista)
