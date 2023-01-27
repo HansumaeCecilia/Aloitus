@@ -42,3 +42,7 @@ while True: # Ikuinen silmukka, jossa ollaan kunnes annetaan tyhjä pituus
 
 # Tulosta ruudulle lopuksi lista painoindekseistä
 print('Nimet ja painoindeksit olivat:', bmi_lista)
+
+# Puretaan lista ja tulostetaan se rivi riviltä
+for henkilo in bmi_lista:
+    print(henkilo)
