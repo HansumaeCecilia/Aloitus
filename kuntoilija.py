@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     # Luodaan olio luokasta Kuntoilija
     kuntoilija = Kuntoilija('Kalle Kuntoilija', 171, 65, 40, 1)
-    kuntoilija2 = Kuntoilija('Samu Suutari', 150, 55, 15, 1)
+    kuntoilija2 = Kuntoilija('Samu Suutari', 171, 65, 16, 1)
     print(kuntoilija.nimi, 'painaa', kuntoilija.paino, 'kg')
     print('rasvaprosentti on', kuntoilija.rasvaprosentti())
     print(kuntoilija2.nimi, 'painaa', kuntoilija2.paino, 'kg')
