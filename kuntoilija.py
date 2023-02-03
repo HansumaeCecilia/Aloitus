@@ -30,11 +30,11 @@ class Kuntoilija:
             self.bmi, self.ika, self.sukupuoli)
         return self.rasvaprosentti
 
+    #Lapsen rasvaprosentin laskennan metodi 1
     def rasvaprosentti_lapsi(self):
         self.rasvaprosentti_lapsi = fitness.lapsen_rasvaprosentti(
             self.bmi, self.ika, self.sukupuoli)
         return self.rasvaprosentti
-
 
 if __name__ == "__main__":
 
